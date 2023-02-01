@@ -1,4 +1,6 @@
 import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
 import dotenv from 'dotenv';
 import { resolve } from 'path';
 import homeRouter from './routes/home';
@@ -10,6 +12,19 @@ import './database';
 
 dotenv.config();
 
+const whitelist = [
+  'http://52.67.209.28',
+  'http://localhost:3002',
+  'https://pt.wikipedia.org',
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelist.indexOf(origin) !== -1 || (!origin)) return callback(null, true);
+    return callback(new Error('Cors not authorized'));
+  },
+};
+
 class App {
   constructor() {
     this.app = express();
@@ -20,6 +35,8 @@ class App {
   middlewares() {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
+    this.app.use(helmet());
+    this.app.use(cors(corsOptions));
     this.app.use(express.static(resolve(__dirname, 'uploads')));
   }
 
