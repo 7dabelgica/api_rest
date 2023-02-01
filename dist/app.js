@@ -20,7 +20,7 @@ const whitelist = [
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || (!origin)) return callback(null, true);
-    return callback(new Error('Cors not authorized'));
+    return callback(new Error('Cors nott authorized'));
   },
 };
 
