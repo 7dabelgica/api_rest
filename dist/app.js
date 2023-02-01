@@ -15,7 +15,6 @@ _dotenv2.default.config();
 const whitelist = [
   'http://52.67.209.28',
   'http://localhost:3002',
-  'https://pt.wikipedia.org',
 ];
 
 const corsOptions = {
