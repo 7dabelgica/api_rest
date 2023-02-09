@@ -18,11 +18,17 @@ const whitelist = [
   'http://localhost:3000',
 ];
 
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     if (whitelist.indexOf(origin) !== -1 || (!origin)) return callback(null, true);
+//     return callback(new Error('Cors notttt authorized'));
+//   },
+// };
+
 const corsOptions = {
-  origin: (origin, callback) => {
-    if (whitelist.indexOf(origin) !== -1 || (!origin)) return callback(null, true);
-    return callback(new Error('Cors notttt authorized'));
-  },
+  origin: 'http://localhost:3000',
+  credentials: true,
+  optionSuccessStatus: 200,
 };
 
 class App {
