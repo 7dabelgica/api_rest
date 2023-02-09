@@ -7,7 +7,7 @@ const router = new Express();
 // router.get('/', userCtrl.index);
 // router.get('/', userCtrl.show);
 
-router.post('/', loginRequired, userCtrl.store);
+router.post('/', userCtrl.store);
 router.put('/', loginRequired, userCtrl.update);
 router.delete('/', loginRequired, userCtrl.delete);
 

@@ -7,7 +7,7 @@ const router = new (0, _express2.default)();
 // router.get('/', userCtrl.index);
 // router.get('/', userCtrl.show);
 
-router.post('/', _loginRequired2.default, _user2.default.store);
+router.post('/', _user2.default.store);
 router.put('/', _loginRequired2.default, _user2.default.update);
 router.delete('/', _loginRequired2.default, _user2.default.delete);
 
