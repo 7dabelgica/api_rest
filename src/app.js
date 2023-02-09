@@ -26,7 +26,7 @@ const whitelist = [
 // };
 
 const corsOptions = {
-  origin: 'http://localhost:3002',
+  origin: 'http://52.67.209.28',
   credentials: true,
   optionSuccessStatus: 200,
 };
