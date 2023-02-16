@@ -95,7 +95,7 @@ class AlunoController {
       }
 
       const alunoAtualizado = await aluno.update(req.body);
-      const { nome, email, peso, altura, idade } = alunoAtualizado;
+      const { nome, sobrenome, email, peso, altura, idade } = alunoAtualizado;
 
       return res.json({ nome, sobrenome, email, peso, altura, idade });
     } catch (e) {
