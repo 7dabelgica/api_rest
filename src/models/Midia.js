@@ -1,6 +1,6 @@
 import Sequelize, { Model } from 'sequelize';
 import Aluno from './Aluno';
-import app from '../config/app';
+import appConfig from '../config/app';
 
 export default class Midia extends Model {
   static init(sequelize) {
@@ -26,7 +26,7 @@ export default class Midia extends Model {
       url: {
         type: Sequelize.VIRTUAL,
         get() {
-          return `${app.url}/images/${this.getDataValue('filename')}`;
+          return `${appConfig.url}/images/${this.getDataValue('filename')}`;
         },
       },
     }, {

@@ -1,4 +1,4 @@
 export default {
-  url: process.env.APP_URL,
+  url: 'http://52.67.209.28',
 };
 
