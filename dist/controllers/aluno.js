@@ -39,9 +39,7 @@ class AlunoController {
         });
       }
 
-      const { nome, sobrenome, email, peso, altura, idade } = aluno;
-
-      return res.json({ nome, sobrenome, email, peso, altura, idade });
+      return res.json(aluno);
     } catch (e) {
       return res.status(401).json({
         errors: e.error.map((err) => err.message),
